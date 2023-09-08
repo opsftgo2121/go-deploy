@@ -2,13 +2,13 @@ package main
 
 import (
 	"database/sql"
-	"github.com/joho/godotenv"
-	"github.com/labstack/echo/v4"
-	_ "github.com/lib/pq"
 	"log"
 	"net/http"
 	"os"
 	"strconv"
+
+	"github.com/labstack/echo/v4"
+	_ "github.com/lib/pq"
 )
 
 // Book adalah struktur untuk representasi data buku
@@ -23,9 +23,9 @@ var (
 )
 
 func init() {
-	if err := godotenv.Load(); err != nil {
-		log.Fatalf("Error loading .env file: %v", err)
-	}
+	// if err := godotenv.Load(); err != nil {
+	// 	log.Fatalf("Error loading .env file: %v", err)
+	// }
 	connStr := "user=postgres password=Hacktiv8123 host=db.gxdymouplidfsyylzfei.supabase.co port=5432 dbname=postgres"
 	var err error
 	db, err = sql.Open("postgres", connStr)
