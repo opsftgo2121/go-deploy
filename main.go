@@ -59,7 +59,7 @@ func main() {
 	// API Endpoint untuk menghapus buku berdasarkan ID
 	e.DELETE("/books/:id", deleteBook)
 
-	e.Logger.Fatal(e.Start(port))
+	e.Logger.Fatal(e.Start(":" + port))
 }
 
 func createBook(c echo.Context) error {
